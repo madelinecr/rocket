@@ -1,0 +1,2 @@
+class Imgboard < ApplicationRecord
+end
