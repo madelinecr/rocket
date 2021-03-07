@@ -11,12 +11,14 @@
   </head>
 
   <body>
-    <br />
-    <%= button_to "Homepage", root_path, method: :get %>
-    <br />
-    <%= button_to "Posts", posts_path, method: :get %>
-    <br />
-    <%= button_to "New Post", new_post_path, method: :get %>
+    <% if user_signed_in? %>
+      <br />
+      <%= button_to "Homepage", root_path, method: :get %>
+      <br />
+      <%= button_to "Posts", posts_path, method: :get %>
+      <br />
+      <%= button_to "New Post", new_post_path, method: :get %>
+    <% end %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
