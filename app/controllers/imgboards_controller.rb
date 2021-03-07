@@ -1,6 +1,7 @@
 class ImgboardsController < ApplicationController
 
   def index
+    @imgboards = Imgboard.all
   end
 
   def show
