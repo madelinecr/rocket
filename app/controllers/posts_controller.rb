@@ -15,7 +15,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
 
     if @post.save
-      redirect_to @post
+      redirect_to @post, notice: "Successfully created a post!"
     else
       render action: "new"
     end
