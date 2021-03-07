@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  before_action :check_filter, :only => [:new, :create]
 
   def index
     @posts = Post.all
@@ -20,6 +21,12 @@ class PostsController < ApplicationController
     else
       render action: "new"
     end
+  end
+
+  protected
+
+  def check_filter
+    redirect_to root_path if current_user.nil?
   end
 
   private
