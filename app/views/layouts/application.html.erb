@@ -12,9 +12,11 @@
 
   <body>
     <br />
-    <%= link_to "Posts", posts_path %>
+    <%= button_to "Homepage", root_path, method: :get %>
     <br />
-    <%= link_to "New Post", new_post_path %>
+    <%= button_to "Posts", posts_path, method: :get %>
+    <br />
+    <%= button_to "New Post", new_post_path, method: :get %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>

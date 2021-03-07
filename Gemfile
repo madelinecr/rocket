@@ -5,6 +5,7 @@ ruby '3.0.0'
 
 # Application-specific gems
 gem 'devise'
+gem 'poppler'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 6.1.3'
