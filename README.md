@@ -1,7 +1,7 @@
 # README
 
 This is the code repository for Rocket, a customizable image board written in
-Ruby on Rails 6!
+Ruby on Rails 6.
 
 ## Configuration of Application
 
