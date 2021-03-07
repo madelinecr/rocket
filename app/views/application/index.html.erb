@@ -1,1 +1,12 @@
 <h1>Welcome to the Rocket Imageboard System!</h1>
+
+<%= button_to 'User Registration', new_user_registration_path, method: :get %>
+<br />
+<% if user_signed_in? %>
+  <%= button_to 'Sign Out', destroy_user_session_path, method: :delete %>
+<% else %>
+  <%= button_to 'Sign In', new_user_session_path %>
+<% end %>
+
+<br />
+
