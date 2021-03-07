@@ -26,7 +26,10 @@ class PostsController < ApplicationController
   protected
 
   def check_filter
-    redirect_to root_path if current_user.nil?
+    if current_user.nil?
+      flash[:alert] = "You cannot do this without signing in."
+      redirect_to root_path
+    end
   end
 
   private
