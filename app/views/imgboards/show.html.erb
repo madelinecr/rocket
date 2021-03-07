@@ -1,1 +1,5 @@
 <h1><%= @imgboard.title %></h1>
+<% @imgboard.posts.each do |p| %>
+  <h2><%= p.title %></h2>
+  <p><%= p.body %></p>
+<% end %>

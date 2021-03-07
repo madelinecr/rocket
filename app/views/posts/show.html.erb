@@ -2,4 +2,6 @@
 
 <p><%= @post.title %></p>
 <p><%= @post.body %></p>
-<p><%= image_tag(url_for(@post.image)) %></p>
+<% if @post.image.exists? %>
+  <p><%= image_tag(url_for(@post.image)) %></p>
+<% end %>

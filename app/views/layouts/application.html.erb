@@ -21,9 +21,11 @@
       <br />
       <%= button_to "Homepage", root_path, method: :get %>
       <br />
-      <%= button_to "Posts", posts_path, method: :get %>
+      <%= button_to "Posts", imgboard_posts_path(:imgboard_id => @imgboard.id), method: :get %>
       <br />
-      <%= button_to "New Post", new_post_path, method: :get %>
+      <%= button_to "New Post", new_imgboard_post_path(:imgboard_id => @imgboard.id), method: :get %>
+      <br />
+      <%= button_to "Image Boards", imgboard_path(@imgboard.id), method: :get %>
       <br />
       <%= button_to "New Image Board", new_imgboard_path, method: :get %>
       <br />

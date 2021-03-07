@@ -5,11 +5,12 @@ class ImgboardsController < ApplicationController
   end
 
   def show
+    puts params.inspect
     @imgboard = Imgboard.find(params[:id])
   end
 
   def new
-    @imgboard = Imgboard.new
+    @imgboard = Imgboard.find(params[:id])
   end
 
   def create

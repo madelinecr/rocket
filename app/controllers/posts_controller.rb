@@ -2,15 +2,19 @@ class PostsController < ApplicationController
   before_action :check_filter, :only => [:new, :create]
 
   def index
-    @posts = Post.all
+    @imgboard = Imgboard.find(params[:imgboard_id])
+    @posts = Post.where(:imgboard_id => params[:imgboard_id])
   end
 
   def show
+    @imgboard = Imgboard.find(params[:imgboard_id])
     @post = Post.find(params[:id])
   end
 
   def new
-    @post = Post.new
+    puts params.inspect
+    @imgboard = Imgboard.find(params[:imgboard_id])
+    @post = Post.new(:imgboard_id => params[:imgboard_id])
   end
 
   def create
@@ -35,6 +39,6 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body, :image)
+    params.require(:post).permit(:title, :body, :image, :imgboard_id)
   end
 end
