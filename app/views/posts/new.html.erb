@@ -1,0 +1,9 @@
+<h1>Create new Post</h1>
+
+<%= form_for @post, url: posts_path do |form| %>
+  <%= form.label :title, "Title: " %>
+  <%= form.text_field :title %>
+  <%= form.label :body, "Body: " %>
+  <%= form.text_field :body %>
+  <%= form.submit "Create Post" %>
+<% end %>
