@@ -11,6 +11,10 @@
   </head>
 
   <body>
+    <br />
+    <%= link_to "Posts", posts_path %>
+    <br />
+    <%= link_to "New Post", new_post_path %>
     <% if notice %>
       <p class="alert alert-success"><%= notice %></p>
     <% end %>
