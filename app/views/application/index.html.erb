@@ -1,4 +1,6 @@
-<h1>Welcome to <%= @imgboard_name %>!</h1>
+<h1>Welcome to <%= site_name %>!</h1>
+
+<%= site_name %>
 
 <% if user_signed_in? %>
   <%= link_to 'Sign Out', destroy_user_session_path, method: :delete %>

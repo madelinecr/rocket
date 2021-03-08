@@ -19,17 +19,24 @@
     <% end %>
     <% if user_signed_in? %>
       <br />
-      <%= button_to "Homepage", root_path, method: :get %>
-      <br />
-      <%= button_to "Posts", imgboard_posts_path(:imgboard_id => @imgboard.id), method: :get %>
-      <br />
-      <%= button_to "New Post", new_imgboard_post_path(:imgboard_id => @imgboard.id), method: :get %>
-      <br />
-      <%= button_to "Image Boards", imgboard_path(@imgboard.id), method: :get %>
-      <br />
-      <%= button_to "New Image Board", new_imgboard_path, method: :get %>
-      <br />
+      <div class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <%= link_to site_name, root_path, class: "navbar-brand mr-auto" %>
+          <div class="navbar-nav mr-auto">
+            <%= link_to "Posts", imgboard_posts_path(:imgboard_id => @imgboard.id), class: "nav-link" %>
+          </div>
+          <div class="navbar-nav mr-auto">
+            <%= link_to "New Post", new_imgboard_post_path(:imgboard_id => @imgboard.id), class: "nav-link" %>
+          </div>
+          <div class="navbar-nav mr-auto">
+            <%= link_to "Image Boards", imgboard_path(@imgboard.id), class: "nav-link" %>
+          </div>
+          <div class="navbar-nav mr-auto">
+            <%= link_to "New Image Board", new_imgboard_path, class: "nav-link" %>
+          </div>
+        </div>
+      </div>
+      <%= yield %>
     <% end %>
-    <%= yield %>
   </body>
 </html>

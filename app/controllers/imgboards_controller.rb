@@ -10,7 +10,7 @@ class ImgboardsController < ApplicationController
   end
 
   def new
-    @imgboard = Imgboard.find(params[:id])
+    @imgboard = Imgboard.first
   end
 
   def create
